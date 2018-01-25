@@ -1,0 +1,430 @@
+@import "fonts"
+@import "libs"
+@import "vars"
+
+//yellow f0d488
+*
+	-webkit-box-sizing: border-box
+	-moz-box-sizing: border-box
+	box-sizing: border-box
+	&:before, &:after
+		-webkit-box-sizing: border-box
+		-moz-box-sizing: border-box
+		box-sizing: border-box
+
+*::-webkit-input-placeholder
+	color: #666
+	opacity: 1
+
+*:-moz-placeholder
+	color: #666
+	opacity: 1
+
+*::-moz-placeholder
+	color: #666
+	opacity: 1
+
+*:-ms-input-placeholder
+	color: #666
+	opacity: 1
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+	color: #666
+body input:required:valid,
+body textarea:required:valid
+	color: #666
+
+html, body
+	height: 100%
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.75
+	font-family: $default-font
+	overflow-x: hidden
+	opacity: 1
+	font-family: 'Playfair Display', serif
+	color: #f0d488
+
+.preloader
+	position: fixed
+	left: 0
+	top: 0
+	width: 100%
+	height: 100%
+	z-index: 99999999
+	transition: 1s all
+	opacity: 1
+	visibility: visible
+	background: url('../img/loader-hd.gif') center no-repeat
+	background-color: #110f11
+	.loader
+		width: 200px
+		height: 75px
+		position: absolute
+		left: 50%
+		top: 50%
+		transform: translate(-50%, -50%)
+		line-height: 75px
+		text-align: center
+		font-size: 50px
+		p
+			font-family: 'PT Sans', sans-serif
+			color: #f0d488
+.done
+	opacity: 0 !important
+	visibility: hidden !important
+
+
+
+.index
+	background: #110f11	
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+
+.bg-wrap
+	position: absolute
+	width: 100%
+	height: 100vh
+	overflow: hidden
+.bg-0
+	width: 100%
+	height: 100%
+	transition: all .5s ease
+	overflow: hidden
+	position: absolute
+	opacity: 1
+	video
+		object-fit: cover
+		width: 100%
+		height: 100%
+.bg-1,
+.bg-2,
+.bg-3,
+.bg-4,
+.bg-5
+	width: 100%
+	height: 100%
+	transition: all .5s ease
+	overflow: hidden
+	position: absolute
+	opacity: 0
+	img
+		object-fit: cover
+		width: 100%
+		height: 100%
+
+.home-wrap,
+.book-page
+	padding: 50px
+	height: 100vh
+	overflow: hidden
+	p
+		font-family: 'Playfair Display', serif
+		color: #f0d488
+	.logo-text
+		p
+			font-family: 'Playfair Display', serif
+			color: #f0d488
+			padding-left: 25px
+			font-size: 15px
+			margin-top: 15px
+
+.logo-text
+	height: 59vh
+
+.left-title
+	height: 21vh
+	h2
+		font-size: 30px
+		font-family: 'Playfair Display', serif
+		color: #f0d488
+		padding-left: 25px
+
+.title-0
+	opacity: 1
+	transition: all .5s ease
+
+.title-1
+	opacity: 0
+	transition: all .5s ease
+.index-title
+	position: absolute
+
+
+
+.blocks
+	.col-md-4,
+	.col-md-6
+		padding: 3px
+.block
+	padding: 30px 20px 20px
+	border: 1px solid #f0d488
+	cursor: pointer
+	transition: all .5s linear
+	.block-wrap
+		position: relative
+		overflow: hidden
+		height: 100%
+		.block-inner
+			position: absolute
+			transition: all .4s ease-in-out
+			.right-title
+				p
+					text-transform: uppercase
+					font-size: 12px
+			.right-text
+				border-left: 1px solid #f0d488
+				p
+					padding-left: 15px
+					font-size: 15px
+	&:hover
+		background-color: rgba(255, 255, 255, .2)
+
+.block-3
+	.block-inner
+		top: 90%
+	&:hover
+		.block-inner
+			top: 30%
+
+.block-2,
+.block-1
+	.block-inner
+		top: 94%
+	&:hover
+		.block-inner
+			top: 35%
+
+.block-bottom
+	.block-inner
+		top: 82%
+	&:hover
+		.block-inner
+			top: 10%
+
+
+.block-top
+	height: 59vh
+.block-bottom
+	height: 21vh
+
+.number
+	height: 55px
+	p
+		color: #f0d488
+		font-family: 'Playfair Display', serif
+		text-align: right
+		text-transform: uppercase
+		font-size: 12px
+		margin: -8px 0 0
+		letter-spacing: 2px
+		padding: 0
+		i
+			margin-right: 10px
+		span
+			font-family: 'PT Sans', sans-serif
+
+
+
+
+
+
+
+/*************second page******************/
+
+
+#menu
+	padding: 0
+	margin: 0
+	position: absolute
+	z-index: 1000
+	width: 100%
+	bottom: 0
+	border-top: 1px solid rgba(240,212,136,.3)
+	.active
+		&:before
+			background-color: #f0d488
+	li
+		display: inline-block
+		padding-top: 25px
+		position: relative
+		width: 12%
+		text-align: center
+		&:before
+			content: ''
+			position: absolute
+			top: -10px
+			width: 20px
+			height: 20px
+			border: 1px solid #f0d488
+			border-radius: 50%
+			background-color: #52596B
+			right: 50%
+			left: 50%
+			margin-right: -10px
+			margin-left: -10px
+			z-index: -2
+		a
+			color: #f0d488
+			text-decoration: none
+			font-family: 'Playfair Display', serif
+
+.book-page
+	background: url('../img/book-bg.png') center no-repeat
+	background-size: cover
+	width: 100%
+	height: 100vh
+	padding: 50px
+.book-wrap
+	width: 100%
+	height: 100%
+
+.book-inner
+	position: relative
+	width: 100%
+	height: 100%
+
+.book-img-wrap
+	width: 100%
+	height: 100%
+	position: absolute !important
+	opacity: 0
+	transition: all .5s ease
+	.book-slide-img
+		text-align: center
+		img
+			filter: drop-shadow(10px 10px 5px #222)
+			height: 50vh
+			margin: auto
+	.book-img
+		text-align: center
+		position: absolute
+		width: 100%
+		top: 45%
+		margin-top: -25vh
+		img
+			filter: drop-shadow(10px 10px 5px #222)
+			height: 50vh
+		.book-img-inner
+			position: relative
+			img
+				filter: drop-shadow(10px 10px 5px #222)
+				height: 50vh
+			.form-wrap
+				position: absolute
+				right: 50%
+				left: 50%
+				margin-left: -230px;
+				margin-right: -550px
+				width: 826px
+				top: 5vh
+				text-align: center
+				textarea
+					display: block
+					background-color: rgba(255,255,255,.1)
+					margin: 0 auto
+					overflow: none
+					color: #f0d488
+					font-family: 'Playfair Display', serif
+					width: 300px
+					
+				button
+					text-transform: uppercase
+					border: none
+					background: inherit
+					color: #f0d488
+					margin-top: 20px
+					font-family: 'Playfair Display', serif
+					cursor: pointer
+
+.book-slide-img-wrap
+	position: absolute
+	width: 100%
+	top: 45%
+	margin-top: -25vh
+
+
+.slick-list
+	height: 100%
+.slick-track
+	height: 100%
+
+.book-header
+	width: 100%
+	position: relative
+	.container-fluid
+		position: absolute
+		z-index: 10
+		.logo-text
+			height: auto
+
+.first-book-nav
+	i
+		color: #f0d488
+		position: absolute
+		top: 50%
+		margin-top: -21px
+		font-size: 16px
+		z-index: 99999
+		padding: 5px
+		cursor: pointer
+	.fa-angle-left
+		left: 0
+	.fa-angle-right
+		right: 0
+	.slick-list
+		text-align: center
+		p
+			text-transform: uppercase
+			font-size: 12px
+			padding: 20px
+			border-bottom: 1px solid #f0d488
+
+.first-book	
+	height: 100%;		
+
+
+
+.right-bar-wrap
+	position: absolute
+	display: block
+	right: 50px
+	height: 60vh
+	top: 45%
+	margin-top: -30vh
+	border: 1px solid #f0d488
+	padding: 20px
+	background-color: rgba(255,255,255,.1)
+	width: 300px
+	z-index: 9999
+	opacity: 0
+	transition: all .5s ease
+	.fa-cog
+		position: absolute
+		margin-top: -38px
+		color: #f0d488
+		font-size: 36px
+		right: 50%
+		margin-right: -18px
+.right-bar
+	width: 100%
+	height: 100%
+	padding-top: 5vh
+
+
+
+
+
+
+
+
+
+
+@import "media" 
