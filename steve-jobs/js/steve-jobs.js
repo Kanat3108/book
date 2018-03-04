@@ -45,7 +45,7 @@ function addPage(page, book) {
 
 		var element = $('<div />',
 			{'class': 'own-size',
-				css: {width: 460, height: 582}
+				css: {width: 379, height: 480}
 			}).
 			html('<div class="loader"></div>');
 
@@ -235,3 +235,10 @@ function isChrome() {
 	return navigator.userAgent.indexOf('Chrome')!=-1;
 
 }
+
+$(document).ready(function(){
+	$('.sj-book').click(function(){
+		$("#clickSound")[0].play();
+	});
+});
+	

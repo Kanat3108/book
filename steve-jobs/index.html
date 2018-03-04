@@ -10,9 +10,21 @@
 <script type="text/javascript" src="../libs/jquery.mousewheel.min.js"></script>
 <script type="text/javascript" src="../libs/modernizr.2.5.3.min.js"></script>
 <script type="text/javascript" src="../libs/hash.js"></script>
+<script src="https://unpkg.com/react@15/dist/react.js"></script>
+<script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script>
+<script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
+<script type="text/javascript" src="../libs/react-app.js" type ="text/babel"></script>
+
 </head>
 <body>
-<div>aDSADS</div>
+<div id="head-steve">
+	<div class="wrap-steve">
+		<div class="logo-steve">
+			<img src="../img/logo.png">
+			<p>Unikátní, limitovaná sběratelská kolekce cenných autorských medilí ke stému výročí vzniku ČSR</p>
+		</div>
+	</div>
+</div>
 <div id="canvas">
 	<div id="book-zoom">
 		<div class="sj-book">
@@ -24,10 +36,118 @@
 			<div class="hard p12"></div>
 		</div>
 	</div>
-	<div id="slider-bar" class="turnjs-slider">
-		<div id="slider"></div>
-	</div>
+	
 </div>
+<audio id="clickSound">
+	<source src="pics/sound.wav"></source>
+</audio>
+
+
+<!--react-->
+<script type="text/babel">
+
+class Filter2 extends React.Component{
+	
+	constructor(props){
+	 	super(props);
+	 	this.state = {value: 'pervyi'};
+	 	this.handleChange = this.handleChange.bind(this);
+	}
+
+	handleChange(e){
+		this.setState({value: e.target.value});
+	}
+
+	render(){
+		if ( 'pervyi' == this.state.value){
+		 	var image = 'http://lorempicsum.com/futurama/255/200/2'
+		} else if('vtoroi' == this.state.value){
+			var image = 'http://lorempicsum.com/futurama/255/200/5'
+		}
+		return(
+			<div className="filter-steve1">
+				<form >
+					<select value={this.state.value} onChange={this.handleChange} >
+						<option value="pervyi">11 dafs</option>
+						<option value="vtoroi">12 sdaf</option>
+						<option value="fda">13 asdf</option>
+						<option value="adfs">14 asdf</option>
+						<option value="asdfasd">15 sadf</option>
+					</select>
+				</form>
+				<img src={image} />
+			</div>
+		)
+	}
+}
+
+class Filter1 extends React.Component{
+	constructor(props){
+	 	super(props);
+	 	this.state = {value: 'pervyi'};
+	 	this.handleChange = this.handleChange.bind(this);
+	}
+
+	handleChange(e){
+		this.setState({value: e.target.value});
+	}
+
+	render(){
+		var current = this.state.value;
+		return(
+			<div className="filter-steve">
+				<form >
+					<select  value={this.state.value} onChange={this.handleChange}>
+						<option value="pervyi">11 dafs</option>
+						<option value="vtoroi">12 sdaf</option>
+						<option value="fda">13 asdf</option>
+						<option value="adfs">14 asdf</option>
+						<option value="asdfasd">15 sadf</option>
+					</select>
+				</form>
+				<p>{current}</p>
+			</div>
+		)
+	}
+};
+
+class Head extends React.Component{
+	render(){
+		return(
+			<div className="wrap-steve">
+				<div className="logo-steve">
+					<img src="../img/logo.png" />
+				</div>
+
+				<div className="title-steve">
+					<p>Unikátní, limitovaná sběratelská kolekce cenných autorských medilí ke stému výročí vzniku ČSR</p>
+				</div>
+			</div>
+		)
+	}
+};
+
+class App extends React.Component{
+	render(){
+	return(
+	<div>
+		<Head/>
+		<Filter1/>
+		<Filter2/>
+	</div>
+	)
+}
+};
+
+
+
+ReactDOM.render(
+  <App/>,
+  document.getElementById('head-steve')
+);
+
+</script>
+
 
 
 <script type="text/javascript">
@@ -42,87 +162,6 @@ function loadApp() {
 		setTimeout(loadApp, 10);
 		return;
 	}
-
-	// Mousewheel
-
-	
-	// Slider
-
-	$( "#slider" ).slider({
-		min: 1,
-		max: 100,
-
-		start: function(event, ui) {
-
-			if (!window._thumbPreview) {
-				_thumbPreview = $('<div />', {'class': 'thumbnail'}).html('<div></div>');
-				setPreview(ui.value);
-				_thumbPreview.appendTo($(ui.handle));
-			} else
-				setPreview(ui.value);
-
-			moveBar(false);
-
-		},
-
-		slide: function(event, ui) {
-
-			setPreview(ui.value);
-
-		},
-
-		stop: function() {
-
-			if (window._thumbPreview)
-				_thumbPreview.removeClass('show');
-			
-			$('.sj-book').turn('page', Math.max(1, $(this).slider('value')*2 - 2));
-
-		}
-	});
-
-
-	// URIs
-	
-	Hash.on('^page\/([0-9]*)$', {
-		yep: function(path, parts) {
-
-			var page = parts[1];
-
-			if (page!==undefined) {
-				if ($('.sj-book').turn('is'))
-					$('.sj-book').turn('page', page);
-			}
-
-		},
-		nop: function(path) {
-
-			if ($('.sj-book').turn('is'))
-				$('.sj-book').turn('page', 1);
-		}
-	});
-
-	// Arrows
-
-	$(document).keydown(function(e){
-
-		var previous = 37, next = 39;
-
-		switch (e.keyCode) {
-			case previous:
-
-				$('.sj-book').turn('previous');
-
-			break;
-			case next:
-				
-				$('.sj-book').turn('next');
-
-			break;
-		}
-
-	});
-
 
 	// Flipbook
 
@@ -173,9 +212,9 @@ function loadApp() {
 					$('.sj-book .p2').removeClass('fixed');
 
 				if (page<book.turn('pages'))
-					$('.sj-book .p111').addClass('fixed');
+					$('.sj-book .p11').addClass('fixed');
 				else
-					$('.sj-book .p111').removeClass('fixed');
+					$('.sj-book .p11').removeClass('fixed');
 
 				Hash.go('page/'+page).update();
 					

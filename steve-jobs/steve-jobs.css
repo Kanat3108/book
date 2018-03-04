@@ -20,43 +20,17 @@ body{
 
 #head-steve{
 	position: absolute;
-	top: 0;
-	width: 100%;
-	
-}
-.wrap-steve{
-	position: absolute;
-	top: 30px;
-	left: 30px;
+	top: 50px;
+	left: 50px;
 	width: 230px;
 }
 
 .logo-steve img{
 	width: 100%;
 }
-.logo-steve p{
-	    font-family: 'Playfair Display',serif;
-    color: #f0d488;
-    padding-left: 25px;
-    font-size: 15px;
-    margin-top: 15px;
-}
-
-.filter-steve{
-	position: absolute;
-	right: 50px;
-	top: 50px;
-	width: 300px;
-}
-.filter-steve1{
-	position: absolute;
-	right: 50px;
-	top: 150px;
-	width: 300px;
-}
 
 .title-steve p{
-	font-family: 'Playfair Display',serif;
+font-family: 'Playfair Display',serif;
     color: #f0d488;
     padding-left: 25px;
     font-size: 15px;
@@ -72,8 +46,8 @@ body{
 }
 
 #canvas{
-	width: 800px;
-	height: 500px;
+	width: 960px;
+	height: 600px;
 	margin: 100px auto;
 }
 
@@ -86,8 +60,8 @@ body{
 }
 
 .sj-book{
-	width:800px;
-	height:500px;
+	width:960px;
+	height:600px;
 }
 
 .sj-book h1{
@@ -239,7 +213,7 @@ body{
 
 .sj-book .p1 .side{
 	width:5px;
-	height:500px;
+	height:600px;
 	position:absolute;
 	top:0;
 	left:475px;
@@ -290,25 +264,24 @@ body{
 
 
 .sj-book .p2{
-	background-position:-400px 0 !important;
-	background-size: cover !important;
+	background-position:-480px 0 !important;
 }
 
 .sj-book .p3{
-	background-position:-1521px 0 !important;
+	background-position:-1920px 0 !important;
 }
 
 .sj-book .p11{
-	background-position:-800px 0 !important;
+	background-position:-960px 0 !important;
 }
 
 .sj-book .p12{
-	background-position:-1600px 0 !important;
+	background-position:-1440px 0 !important;
 }
 
 .sj-book .hard{
 	width:480px;
-	height:500px;
+	height:600px;
 	background-color:white;
 	-webkit-box-shadow:none;
 	-moz-box-shadow:none;
@@ -324,8 +297,8 @@ body{
 }
 
 .sj-book .own-size{
-	width:379px;
-	height:480px;
+	width:460px;
+	height:582px;
 	background-color:white;
 	overflow:hidden;
 }
@@ -346,7 +319,6 @@ body{
 	background-image:-ms-linear-gradient(right, #fff 95%, #cacaca 100%);
 	background-image:-o-linear-gradient(right, #fff 95%, #cacaca 100%);
 	background-image:linear-gradient(right, #fff 95%, #cacaca 100%);
-	background-size: cover;
 }
 
 
@@ -432,7 +404,6 @@ body{
 
 .hard.p12.page{
 	background-image:url(../pics/book-cover.png);
-	background-size: 400px;
 }
 .hard.fixed.back-side.p11{
 	background-image: url(../pics/book-covers-2.jpg);
